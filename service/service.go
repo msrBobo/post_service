@@ -43,7 +43,7 @@ func (s *PostService) Create(ctx context.Context, req *pb.Post) (*pb.Post, error
 	return post, nil
 }
 
-func (s *PostService) GetPost(ctx context.Context, req *pb.GetRequest) (*pb.PostResponse, error) {
+func (s *PostService) Get(ctx context.Context, req *pb.GetRequest) (*pb.PostResponse, error) {
 	post, err := s.storage.Post().GetPost(req.PostId)
 	if err != nil {
 		return nil, err
